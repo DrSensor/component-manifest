@@ -39,11 +39,11 @@ connections:
       component: MyComponent
       property: error
       type: IError
-  - provide: # because <MyComponent on:hear={hear}/> <YourComponent bind:talk={hear}/>
+  - provide: # because <MyComponent on:hear={hear}/>
       component: MyComponent
       property: hear
       type: string
-    require:
+    require: # used in <YourComponent bind:talk={hear}/>
       component: YourComponent
       property: talk
       type: string
