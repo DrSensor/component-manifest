@@ -10,12 +10,12 @@ Extract the manifest file from the sources by providing a specific grammar.
 grammar: [svelte.rpl]
 components:
   - svelte.htmltag.component.name
-provides:
+providers:
   - svelte.EventDispatcher
 connectors:
   - require: svelte.directive.bind.property
     provide: svelte.directive.bind.variable
-requires:
+sockets:
   - svelte.export.let.Unassigned
   - svelte.export.let.Assigned
 ```
@@ -47,7 +47,7 @@ connections:
       component: YourComponent
       property: talk
       type: string
-  - require: # no connection
+  - socket: # no connection
       component: MyComponent
       property: accept
       type: IResponse
